@@ -1,0 +1,27 @@
+body {
+  background-image: url(back.png);
+}
+
+
+
+.nyan-cat-start {
+  position: absolute;
+  transition: 3s;
+  left: 0;
+  top: 0;
+}
+
+.spin {
+  transform: rotate(1000deg);
+  transition:  2s;
+}
+
+.nyan-cat {
+  transition: 3s;
+  position: absolute;
+}
+
+.nyan-cat-end {
+  left: 100vw;
+  top: 100vh;
+}

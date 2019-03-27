@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="Nyan-Cat.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>Nyan-Cat</title>
+</head>
+<body>
+
+<div class="Button1">
+    <p><button class="w3-button w3-black w3-round-large w3-display-middle" id="Nyan">Meoww!</button></p>
+</div>
+
+
+
+<script>
+
+// On click
+var button = document.getElementById('Nyan');
+button.addEventListener('click', addImageToBody);
+
+// add image to the body and making it drop 45
+function addImageToBody() {
+
+  var imageNyan = document.createElement('img');
+  imageNyan.src = 'meow.png';
+  document.body.appendChild(imageNyan);
+
+  imageNyan.classList.add('nyan-cat-start');
+  imageNyan.classList.add('nyan-cat');
+
+  setTimeout( function () {
+  imageNyan.classList.add('spin');
+  imageNyan.classList.add('nyan-cat-end');
+ } , 1000);
+  console.log();
+}
+
+
+
+</script>
+</body>
+</html>
