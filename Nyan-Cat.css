@@ -5,23 +5,26 @@ body {
 
 
 .nyan-cat-start {
-  position: absolute;
+  position: fixed;
   transition: 3s;
   left: 0;
   top: 0;
 }
 
 .spin {
+
   transform: rotate(1000deg);
-  transition:  2s;
+  transition:  4s;
 }
 
 .nyan-cat {
-  transition: 3s;
-  position: absolute;
+
+  transition: 1.5s;
+  position: fixed;
 }
 
 .nyan-cat-end {
+
   left: 100vw;
   top: 100vh;
 }
