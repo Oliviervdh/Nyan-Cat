@@ -26,6 +26,9 @@ button.addEventListener('click', startOfTimer); // create a timer function that 
 // start timer
 function startOfTimer() {
 
+  addBackGround(); // calls the global function "addBackGround" when "startOfTimer" gets activated.
+
+
  setTimeout(function () {console.log ('tick,tock') }, 10);
 
  var counter = 0;
@@ -41,35 +44,47 @@ function startOfTimer() {
 }
 
 // add image to the body and making it drop 45
-function addImageToBody(){
+function addImageToBody() {
   var imageNyan = document.createElement('img');
-  var displayCat = Math.floor(Math.random() * 6 ) +2; // variable that defines the random transition of the image
+  var displayCat = Math.floor(Math.random() * 6) + 2; // variable that defines the random transition of the image
   imageNyan.src = 'PYn.gif';
   document.body.appendChild(imageNyan);
 
   imageNyan.style.position = 'fixed';
-  imageNyan.style.left = Math.floor(Math.random() * (- 11)) +'vw'; // generates the random position of the cat.
-  imageNyan.style.top = Math.floor(Math.random() * (- 11)) +'vh';
+  imageNyan.style.left = Math.floor(Math.random() * (-11)) + 'vw'; // generates the random position of the cat.
+  imageNyan.style.top = Math.floor(Math.random() * (-11)) + 'vh';
   imageNyan.style.transition = displayCat + 's'; // applying the variable of "displayCat = 2" to the variables imageNyan transition.
 
   // humanly wait for the cat to be moved.
-  setTimeout( function () {
+  setTimeout(function () {
 
-  imageNyan.style.left = Math.floor(Math.random() * ( 200 - 50) +100) +'vw';
-  imageNyan.style.top = Math.floor(Math.random() * ( 200 - 50) +100) +'vh';
-  imageNyan.style.transform.rotate = '1000deg';
-}, 10);
+    imageNyan.style.left = Math.floor(Math.random() * (200 - 50) + 100) + 'vw';
+    imageNyan.style.top = Math.floor(Math.random() * (200 - 50) + 100) + 'vh';
+  }, 10);
 
-  setTimeout (function () {
+
+  //Image gets removed when it's out of sight
+  setTimeout(function () {
     imageNyan.remove();
-  } ,displayCat * 1000);
+  }, displayCat * 1000);
+}
+
+function addBackGround() {
+  document.body.style.backgroundImage = "url('back.gif')";
+  document.getElementById('Nyan').style.display = 'none';
+
+  setTimeout(function () {
+    document.body.style.backgroundImage = "";
+    document.getElementById('Nyan').style.display = '';
+  }, 10000);
 
 
+}
 
 
 // set a function that intervals/times out and waits for 1.5 seconds. "setinterval"
 // make the cat reapear on random positions. "if" image is on body "return"
-}
+
 
 
 </script>

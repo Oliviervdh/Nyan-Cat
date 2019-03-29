@@ -1,12 +1,10 @@
-body {
-  background-image: url(back.gif);
+
+function addBackGround() {
+
+  document.body.style.backgroundImage = "url('back.gif')";
+
+
+setTimeout(function () {
+  document.body.style.backgroundImage = "";
+}, 10000);
 }
-
-
-
-.spin {
-  transform: rotate(1000deg);
-  transition:  4s;
-}
-
-
