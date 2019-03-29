@@ -23,8 +23,7 @@ var button = document.getElementById('Nyan');
 button.addEventListener('click', startOfTimer); // create a timer function that runs all the other functions for 10 seconds.
 
 
-// var start timer  "settimeput"
-
+// start timer
 function startOfTimer() {
 
  setTimeout(function () {console.log ('tick,tock') }, 10);
@@ -35,7 +34,7 @@ function startOfTimer() {
     addImageToBody();
     if (counter === 5) {
       console.log('clearing');
-      clearInterval(setIntervalId);
+      clearInterval(setIntervalId); // stop raining after 10 seconds
     }
   }, 2000);
 
@@ -44,25 +43,30 @@ function startOfTimer() {
 // add image to the body and making it drop 45
 function addImageToBody(){
   var imageNyan = document.createElement('img');
-  imageNyan.src = 'meow.png';
+  var displayCat = Math.floor(Math.random() * 6 ) +2; // variable that defines the random transition of the image
+  imageNyan.src = 'PYn.gif';
   document.body.appendChild(imageNyan);
 
   imageNyan.style.position = 'fixed';
-  imageNyan.style.left = '0';
-  imageNyan.style.top = '0';
-  imageNyan.style.transition = '2s';
-
-
+  imageNyan.style.left = Math.floor(Math.random() * (- 11)) +'vw'; // generates the random position of the cat.
+  imageNyan.style.top = Math.floor(Math.random() * (- 11)) +'vh';
+  imageNyan.style.transition = displayCat + 's'; // applying the variable of "displayCat = 2" to the variables imageNyan transition.
 
   // humanly wait for the cat to be moved.
   setTimeout( function () {
 
-  imageNyan.style.left = '100vw';
-  imageNyan.style.top = '100vh';
+  imageNyan.style.left = Math.floor(Math.random() * ( 200 - 50) +100) +'vw';
+  imageNyan.style.top = Math.floor(Math.random() * ( 200 - 50) +100) +'vh';
   imageNyan.style.transform.rotate = '1000deg';
 }, 10);
 
-// when can hits top 100 left 100, remove image.
+  setTimeout (function () {
+    imageNyan.remove();
+  } ,displayCat * 1000);
+
+
+
+
 // set a function that intervals/times out and waits for 1.5 seconds. "setinterval"
 // make the cat reapear on random positions. "if" image is on body "return"
 }
