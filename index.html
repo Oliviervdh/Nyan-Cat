@@ -29,12 +29,23 @@ function startOfTimer() {
   addBackGround(); // calls the global function "addBackGround" when "startOfTimer" gets activated.
 
 
- setTimeout(function () {console.log ('tick,tock') }, 10);
+ setTimeout(function () {console.log ('tick,tok') }, 10);
 
  var counter = 0;
  var setIntervalId = setInterval(function () {
    counter += 1;
-    addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
+   addImageToBody();
     if (counter === 5) {
       console.log('clearing');
       clearInterval(setIntervalId); // stop raining after 10 seconds
